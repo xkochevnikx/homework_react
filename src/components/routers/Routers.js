@@ -14,4 +14,3 @@ export const privateRoutes = [
 export const publicRoutes = [
   { path: "/login", component: <Login />, exact: true },
 ];
-console.log(privateRoutes);
