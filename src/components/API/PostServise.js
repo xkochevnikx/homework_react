@@ -19,6 +19,7 @@ export default class PostServise {
     );
     return response;
   }
+
   static async getByCom(id) {
     const response = await axios.get(
       `https://jsonplaceholder.typicode.com/posts/${id}/comments`
