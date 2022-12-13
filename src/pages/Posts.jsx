@@ -7,6 +7,7 @@ import Loader from "../components/UI/Loader/Loader";
 import MyModal from "../components/UI/MyModal/MyModal";
 import Pagination from "../components/UI/Pagination/Pagination";
 import PostFilter from "../components/UI/PostFilter/PostFilter";
+import MySelect from "../components/UI/Select/MySelect";
 import useFetching from "../hooks/useFetching";
 import { useObserver } from "../hooks/useObserver";
 import { usePosts } from "../hooks/usePosts";
@@ -53,7 +54,7 @@ function Posts() {
 
   useEffect(() => {
     fetching();
-  }, [page]);
+  }, [page, limit]);
 
   //? функция создания карточки
   function createPost(newPost) {
@@ -76,6 +77,16 @@ function Posts() {
           page={page}
           totalPages={totalPages}
           changePage={changePage}
+        />
+        <MySelect
+          value={limit}
+          onChange={value => setLimit(value)}
+          defaultValue="колличество эл-ов на странице"
+          option={[
+            { value: 10, name: 10 },
+            { value: 25, name: 25 },
+            { value: -1, name: "все" },
+          ]}
         />
         {postError && <h1>Произошла ошибка ${postError}</h1>}
 
