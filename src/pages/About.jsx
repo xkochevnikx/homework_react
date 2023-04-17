@@ -1,12 +1,11 @@
-import React from "react";
-import NavBar from "../components/UI/navbar/NavBar";
+import React from 'react';
 
 const About = () => {
-  return (
-    <>
-      <h1>About</h1>
-    </>
-  );
+    return (
+        <>
+            <h1>About</h1>
+        </>
+    );
 };
 
 export default About;
